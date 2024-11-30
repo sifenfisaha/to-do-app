@@ -76,9 +76,8 @@ function addItems(e) {
   item.appendChild(chekboxContainer);
   item.appendChild(action);
   itemsLiist.appendChild(item);
-  console.log(item);
-  console.log(formInput.value);
   formInput.value = "";
 }
 // event
 apply.addEventListener("click", addItems);
+apply.addEventListener("click", cancelPopUp);

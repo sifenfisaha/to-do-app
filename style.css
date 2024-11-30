@@ -222,6 +222,7 @@ body {
   padding: 2rem;
   border-radius: 1rem;
   z-index: 100;
+  margin: 0 10px;
 }
 .cancel {
   position: absolute;
