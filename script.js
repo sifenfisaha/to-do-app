@@ -10,6 +10,8 @@ const h = document.querySelector(".heading");
 const header = document.querySelector(".header");
 const img = document.querySelector(".imgh");
 const deleteEl = document.querySelector(".delet");
+const search = document.querySelector(".search");
+
 //
 const checkUi = () => {
   const items = ItemsContainer.querySelectorAll("div");
@@ -113,8 +115,23 @@ function deletItem(e) {
     e.target.parentElement.parentElement.parentElement.remove();
   }
 }
+function searchItems(e) {
+  const items = ItemsContainer.querySelectorAll(".item");
+  const text = e.target.value.toLowerCase();
+  items.forEach((item) => {
+    const itemName =
+      item.firstChild.firstChild.nextSibling.textContent.toLocaleLowerCase();
+    if (itemName.indexOf(text) != -1) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+    console.log(itemName);
+  });
+}
 // event
 apply.addEventListener("click", addItems);
 apply.addEventListener("click", cancelPopUp);
 ItemsContainer.addEventListener("click", deletItem);
 ItemsContainer.addEventListener("click", cheked);
+search.addEventListener("input", searchItems);
