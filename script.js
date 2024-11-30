@@ -78,6 +78,7 @@ function addItems(e) {
   itemsLiist.appendChild(item);
   console.log(item);
   console.log(formInput.value);
+  formInput.value = "";
 }
 // event
 apply.addEventListener("click", addItems);
