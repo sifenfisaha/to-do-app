@@ -5,7 +5,24 @@ const popUp = document.querySelector(".pop-up");
 const cancel = document.querySelector(".cancel");
 const apply = document.querySelector(".apply");
 const formInput = document.querySelector(".form-input");
+const ItemsContainer = document.querySelector(".items");
+const h = document.querySelector(".heading");
+const header = document.querySelector(".header");
+const img = document.querySelector(".imgh");
 //
+const checkUi = () => {
+  const items = ItemsContainer.querySelectorAll("div");
+  if (items.length === 0) {
+    h.className = "hidden";
+    header.className = "hidden";
+    img.className = "imgh";
+  } else {
+    h.className = "heading";
+    header.className = "header";
+    img.className = "hidden";
+  }
+};
+checkUi();
 // console.log(itemInput.value);
 function popUPMenu(e) {
   overlay.classList.remove("hidden");
@@ -69,14 +86,16 @@ function addItems(e) {
   chekboxContainer.appendChild(document.createTextNode(text));
   const edit = createSpan("edit");
   const deleteEl = createSpan("delet");
-  edit.innerHTML = '<ion-icon name="create-outline"></ion-icon>';
+  edit.innerHTML = '<ion-icon name="pencil-outline"></ion-icon>';
   deleteEl.innerHTML = '<ion-icon name="trash-outline"></ion-icon>';
-  action.appendChild(edit);
   action.appendChild(deleteEl);
+  // action.appendChild(edit);
   item.appendChild(chekboxContainer);
   item.appendChild(action);
   itemsLiist.appendChild(item);
   formInput.value = "";
+  checkUi();
+  // console.log(item);
 }
 // event
 apply.addEventListener("click", addItems);

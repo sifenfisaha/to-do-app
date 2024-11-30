@@ -48,8 +48,9 @@ body {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   color: gray;
+  /* padding: 0.5rem; */
 }
 .items {
   width: 100%;
