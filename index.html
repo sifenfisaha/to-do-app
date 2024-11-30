@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="component/style.css" />
     <title>to do app</title>
   </head>
   <body>
@@ -31,7 +32,7 @@
           </div>
         </div>
       </div>
-      <div class="notes">
+      <!-- <div class="notes">
         <div class="note">
           <input type="checkbox" id="note1" class="custom-checkbox" />
           <label class="note-label">NOTE #1</label>
@@ -44,7 +45,8 @@
             ></span>
           </div>
         </div>
-      </div>
+      </div> -->
+      <div class="items"></div>
       <button class="plus">
         <ion-icon class="plus-icon" name="add-outline"></ion-icon>
       </button>
@@ -61,11 +63,11 @@
               placeholder="Enter Item"
             />
           </div>
-          <div class="form-control">
-            <button class="btn cancel">Cancel</button>
-            <button type="submit" class="btn">Apply</button>
-          </div>
         </form>
+        <div class="form-control">
+          <button type="submit" class="btn apply">Apply</button>
+          <button class="btn cancel">Cancel</button>
+        </div>
       </dvi>
     </div>
     <div class="overlay hidden"></div>

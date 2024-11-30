@@ -2,15 +2,19 @@ const dropdowns = document.querySelectorAll(".dropdown");
 const plusBtn = document.querySelector(".plus");
 const overlay = document.querySelector(".overlay");
 const popUp = document.querySelector(".pop-up");
-const cancel = document.querySelector("cancel");
+const cancel = document.querySelector(".cancel");
+const apply = document.querySelector(".apply");
+const formInput = document.querySelector(".form-input");
 //
+// console.log(itemInput.value);
 function popUPMenu(e) {
-  overlay.classList.toggle("hidden");
-  popUp.classList.toggle("hidden");
+  overlay.classList.remove("hidden");
+  popUp.classList.remove("hidden");
 }
+
 function cancelPopUp(e) {
-  overlay.classList.toggle("hidden");
-  popUp.classList.toggle("hidden");
+  overlay.classList.add("hidden");
+  popUp.classList.add("hidden");
 }
 dropdowns.forEach((dropdown) => {
   const select = dropdown.querySelector(".select");
@@ -41,3 +45,39 @@ dropdowns.forEach((dropdown) => {
 });
 plusBtn.addEventListener("click", popUPMenu);
 cancel.addEventListener("click", cancelPopUp);
+const AddBtn = document.querySelector(".btn");
+const itemsLiist = document.querySelector(".items");
+function createDiv(classes) {
+  const div = document.createElement("div");
+  div.className = classes;
+  return div;
+}
+function createSpan(classes) {
+  const span = document.createElement("span");
+  span.className = classes;
+  return span;
+}
+function addItems(e) {
+  e.preventDefault();
+  const item = createDiv("item");
+  const checkbox = createDiv("checkbox");
+  const action = createDiv("actions");
+  const text = formInput.value;
+  checkbox.innerHTML = ' <ion-icon name="checkmark-outline"></ion-icon>';
+  const chekboxContainer = createDiv("chekbox-container");
+  chekboxContainer.appendChild(checkbox);
+  chekboxContainer.appendChild(document.createTextNode(text));
+  const edit = createSpan("edit");
+  const deleteEl = createSpan("delet");
+  edit.innerHTML = '<ion-icon name="create-outline"></ion-icon>';
+  deleteEl.innerHTML = '<ion-icon name="trash-outline"></ion-icon>';
+  action.appendChild(edit);
+  action.appendChild(deleteEl);
+  item.appendChild(chekboxContainer);
+  item.appendChild(action);
+  itemsLiist.appendChild(item);
+  console.log(item);
+  console.log(formInput.value);
+}
+// event
+apply.addEventListener("click", addItems);

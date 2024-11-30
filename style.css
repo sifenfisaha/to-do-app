@@ -214,8 +214,9 @@ body {
 }
 .pop-up {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* left: 50%; */
+  top: 100px;
+  /* transform: translateX(-50%); */
   margin-top: -5rem;
   background-color: #fff;
   padding: 2rem;
