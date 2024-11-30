@@ -1,5 +1,17 @@
 const dropdowns = document.querySelectorAll(".dropdown");
-
+const plusBtn = document.querySelector(".plus");
+const overlay = document.querySelector(".overlay");
+const popUp = document.querySelector(".pop-up");
+const cancel = document.querySelector("cancel");
+//
+function popUPMenu(e) {
+  overlay.classList.toggle("hidden");
+  popUp.classList.toggle("hidden");
+}
+function cancelPopUp(e) {
+  overlay.classList.toggle("hidden");
+  popUp.classList.toggle("hidden");
+}
 dropdowns.forEach((dropdown) => {
   const select = dropdown.querySelector(".select");
   const caret = dropdown.querySelector(".caret");
@@ -27,3 +39,5 @@ dropdowns.forEach((dropdown) => {
     });
   });
 });
+plusBtn.addEventListener("click", popUPMenu);
+cancel.addEventListener("click", cancelPopUp);

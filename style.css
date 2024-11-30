@@ -22,6 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .search {
   flex: 1;
@@ -37,7 +38,7 @@ body {
 .dropdown {
   min-width: 8rem;
   position: relative;
-  margin: 2rem;
+  margin-left: 1.5rem;
 }
 .select {
   background-color: #6c63ff;
@@ -196,6 +197,7 @@ body {
   position: absolute;
   bottom: 40px;
   right: 40px;
+  border: none;
 }
 .plus:hover {
   cursor: pointer;
@@ -209,4 +211,45 @@ body {
   height: 24px;
   border-radius: 2px;
   background-color: #6c63ff;
+}
+.pop-up {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -5rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  z-index: 100;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3333333d;
+}
+.form-input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: 400px;
+  border: 2px solid #6c63ff;
+  margin-bottom: 10rem;
+}
+.btn {
+  padding: 8px 13px;
+  border: none;
+  background-color: #6c63ff;
+  color: white;
+  border-radius: 4px;
+}
+.form-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hidden {
+  /* display: hidden; */
+  display: none;
 }

@@ -45,10 +45,30 @@
           </div>
         </div>
       </div>
-      <div class="plus">
+      <button class="plus">
         <ion-icon class="plus-icon" name="add-outline"></ion-icon>
-      </div>
+      </button>
+
+      <dvi class="pop-up hidden">
+        <h2 class="heading">Add notes</h2>
+        <form id="item-form">
+          <div class="form-control">
+            <input
+              type="text"
+              class="form-input"
+              id="item-input"
+              name="item"
+              placeholder="Enter Item"
+            />
+          </div>
+          <div class="form-control">
+            <button class="btn cancel">Cancel</button>
+            <button type="submit" class="btn">Apply</button>
+          </div>
+        </form>
+      </dvi>
     </div>
+    <div class="overlay hidden"></div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
