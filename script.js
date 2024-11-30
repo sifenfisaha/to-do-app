@@ -9,6 +9,7 @@ const ItemsContainer = document.querySelector(".items");
 const h = document.querySelector(".heading");
 const header = document.querySelector(".header");
 const img = document.querySelector(".imgh");
+const deleteEl = document.querySelector(".delet");
 //
 const checkUi = () => {
   const items = ItemsContainer.querySelectorAll("div");
@@ -80,10 +81,12 @@ function addItems(e) {
   const checkbox = createDiv("checkbox");
   const action = createDiv("actions");
   const text = formInput.value;
+  const p = document.createElement("p");
+  p.innerHTML = text;
   checkbox.innerHTML = ' <ion-icon name="checkmark-outline"></ion-icon>';
   const chekboxContainer = createDiv("chekbox-container");
   chekboxContainer.appendChild(checkbox);
-  chekboxContainer.appendChild(document.createTextNode(text));
+  chekboxContainer.appendChild(p);
   const edit = createSpan("edit");
   const deleteEl = createSpan("delet");
   edit.innerHTML = '<ion-icon name="pencil-outline"></ion-icon>';
@@ -95,8 +98,23 @@ function addItems(e) {
   itemsLiist.appendChild(item);
   formInput.value = "";
   checkUi();
-  // console.log(item);
+  console.log(item);
+}
+function cheked(e) {
+  if (e.target.parentElement.classList.contains("checkbox")) {
+    e.target.parentElement.classList.toggle("checked");
+
+    e.target.parentElement.nextElementSibling.classList.toggle("strock");
+  } // text-decoration: line-through;
+  checkUi();
+}
+function deletItem(e) {
+  if (e.target.parentElement.classList.contains("delet")) {
+    e.target.parentElement.parentElement.parentElement.remove();
+  }
 }
 // event
 apply.addEventListener("click", addItems);
 apply.addEventListener("click", cancelPopUp);
+ItemsContainer.addEventListener("click", deletItem);
+ItemsContainer.addEventListener("click", cheked);

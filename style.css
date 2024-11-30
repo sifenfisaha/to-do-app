@@ -24,6 +24,7 @@ body {
   text-align: center;
   text-transform: capitalize;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .input-container {
   display: flex;
@@ -66,6 +67,10 @@ body {
 .select:hover {
   background-color: #7068ff;
   cursor: pointer;
+}
+.strock {
+  text-decoration: line-through;
+  color: gray;
 }
 .caret {
   width: 0;
