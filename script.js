@@ -11,7 +11,8 @@ const header = document.querySelector(".header");
 const img = document.querySelector(".imgh");
 const deleteEl = document.querySelector(".delet");
 const search = document.querySelector(".search");
-
+const selected = document.querySelector(".selected");
+const dropdown = document.querySelector(".dropdown");
 //
 const checkUi = () => {
   const items = ItemsContainer.querySelectorAll("div");
@@ -129,9 +130,15 @@ function searchItems(e) {
     console.log(itemName);
   });
 }
+function filter(e) {
+  // console.log(e.target);.
+  console.log(e.target.parentElement.nextSibling);
+  // console.log(selected);
+}
 // event
 apply.addEventListener("click", addItems);
 apply.addEventListener("click", cancelPopUp);
 ItemsContainer.addEventListener("click", deletItem);
 ItemsContainer.addEventListener("click", cheked);
 search.addEventListener("input", searchItems);
+dropdown.addEventListener("click", filter);
