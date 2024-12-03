@@ -136,9 +136,12 @@ function filter(e) {
   // console.log(selected);
 }
 // event
-apply.addEventListener("click", addItems);
-apply.addEventListener("click", cancelPopUp);
-ItemsContainer.addEventListener("click", deletItem);
-ItemsContainer.addEventListener("click", cheked);
-search.addEventListener("input", searchItems);
-dropdown.addEventListener("click", filter);
+function init() {
+  apply.addEventListener("click", addItems);
+  apply.addEventListener("click", cancelPopUp);
+  ItemsContainer.addEventListener("click", deletItem);
+  ItemsContainer.addEventListener("click", cheked);
+  search.addEventListener("input", searchItems);
+  dropdown.addEventListener("click", filter);
+}
+init();
